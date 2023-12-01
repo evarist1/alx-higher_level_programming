@@ -8,7 +8,7 @@ def magic_calculation(a, b):
 
         for i in range(4, 7):
             c = add(c, i)
-        
+
         return c
     else:
         return __import__('magic_calculation_102', globals(), locals(), ['sub'], 0).sub(a, b)
