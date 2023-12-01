@@ -1,11 +1,14 @@
 #!/usr/bin/python3
 
+import sys
+
+def infinite_add(*args):
+    result = sum(int(arg) for arg in args)
+    print(result)
+
 if __name__ == "__main__":
-    """Print the addition of all arguments."""
-    import sys
+    # Get command-line arguments excluding the script name
+    arguments = sys.argv[1:]
 
-    total = 0
-    for i in range(len(sys.argv) - 1):
-        total += int(sys.argv[i + 1])
-    print("{}".format(total))
-
+    # Call the function with the command-line arguments
+    infinite_add(*arguments)
