@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 def magic_calculation(a, b):
-    if a < b:
-        add = __import__('magic_calculation_102', globals(), locals(), ['add'], 0).add
-        sub = __import__('magic_calculation_102', globals(), locals(), ['sub'], 0).sub
+    add, sub = __import__('magic_calculation_102', fromlist=('add', 'sub')).add, __import__('magic_calculation_102', fromlist=('add', 'sub')).sub
 
+    if a < b:
         c = add(a, b)
 
         for i in range(4, 7):
@@ -11,4 +10,4 @@ def magic_calculation(a, b):
 
         return c
     else:
-        return __import__('magic_calculation_102', globals(), locals(), ['sub'], 0).sub(a, b)
+        return sub(a, b)
