@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-"""Square class definition"""
-
-
 class Square:
     """Represents a square
     Attributes:
@@ -13,4 +10,6 @@ class Square:
             size (int): size of a side of the square
         Returns: None
         """
+        if not isinstance(size, int) or size <= 0:
+            raise ValueError("Size must be a positive integer")
         self.__size = size
